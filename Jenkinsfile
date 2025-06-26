@@ -10,6 +10,7 @@ pipeline {
     stage('Build PDF') {
       steps {
         sh 'lualatex --jobname="audio" 2024-wa-vorlage.tex' 
+        achiveArtifacts artifacts: '*.pdf', fingerprint: true
       }
     }
   }
