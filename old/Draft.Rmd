@@ -49,11 +49,12 @@ Beispiele für solche Digitalen Workstations sind: Live (Ableton), Pro Tools (Av
 Dabei bauen all diese Werkzeuge und auch die digitalen Workstations auf digitaler Signalverarbeitung mit theoretischen Konzepten wie zum Beispiel der Fourier-Analyse zur Filtrierung oder auch der Faltung zum Imitieren eines Raumhalles.
 
 # 4 Theorie
+
 ## 4.1 Digitale Signalverarbeitung
 ### 4.1.1 Fourier Analyse
 ### 4.1.2 Faltung
 
-# 5 Implmentierung der Fourier Analyse
+# 5 Implementierung der Fourier Analyse
 
 # 6 Eigenimplementierung eines Audioverarbeitungsprogramms
 

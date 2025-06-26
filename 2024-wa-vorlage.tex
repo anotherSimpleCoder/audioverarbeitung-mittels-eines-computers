@@ -1,0 +1,154 @@
+\documentclass[paper=a4,fontsize=12pt,ngerman]{scrartcl}
+
+\usepackage[utf8]{inputenc}				
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage[a4paper,left=25mm,right=35mm,top=25mm,bottom=30mm]{geometry}
+\usepackage{parskip}
+	
+
+\begin{document}
+
+\pagenumbering{roman}
+\pagestyle{plain}
+
+% Einbinden der Titelseite
+\include{titleseite}
+
+% Hier ist der Abstract
+\section*{Abstract}
+Kurze Zusammenfassung des Inhaltes in deutscher Sprache, der Umfang beträgt 
+zwischen einer halben und einer ganzen DIN A4-Seite.
+
+Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz 
+jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen 
+Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.
+
+Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens 
+Vögel Rüben, Joghurt und Quark. "Fix, Schwyz! " quäkt Jürgen blöd vom Paß. 
+Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich. Falsches Üben 
+von Xylophonmusik quält jeden größeren Zwerg. Heizölrückstoßabdämpfung. Zwei 
+flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im 
+komplett verwahrlosten Taxi quer durch Bayern.
+
+
+\newpage
+\section*{Selbstständigkeitserklärung}
+Ich versichere, dass ich die vorliegende Arbeit selbstständig verfasst und 
+keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+Insbesondere habe ich alle KI-basierten Werkzeuge angegeben, die ich bei
+der Erstellung, Übersetzung oder Überarbeitung des Textes verwendet habe.
+
+Ich erkläre hiermit weiterhin, dass die vorgelegte Arbeit zuvor weder von mir 
+noch von einer anderen Person an dieser oder einer anderen Hochschule 
+eingereicht wurde.
+
+Darüber hinaus ist mir bekannt, dass die Unrichtigkeit dieser Erklärung eine 
+Benotung der Arbeit mit der Note \glqq nicht ausreichend\grqq \ zur Folge hat 
+und einen Ausschluss von der Erbringung weiterer Prüfungsleistungen zur Folge 
+haben kann.
+\bigskip
+ 
+Saarbrücken, den 01.01.1970
+
+\smallskip
+Unterschrift
+
+
+
+
+% Das Inhaltsverzeichnis
+\clearpage
+\tableofcontents 
+
+\clearpage
+\pagenumbering{arabic}
+
+% Hier beginnt das erste Kapitel
+\section{Einleitung}
+In der heutigen Zeit, ermöglichen Programme wie Konferenzsoftware, Digitale Audio Workstations, Aufnahmeprogramme, Messagingprogramme und viele mehr, die Möglichkeit Töne, Sprache und Geräusche zu verarbeiten. 
+Dies ist möglich dank digitaler Signalverarbeitung kombiniert mit Echtzeitlösungen wie Ringpuffern, Pufferung und vielem mehr. 
+In diesem Dokument beleuchten wir einige bestehende Lösungen, welche die Audioverarbeitung auf Computern ermöglichen. 
+Außerdem betrachten wir die Theorie der digitalen Signalverarbeitung und schauen uns auch die Implementierungen von diesen theoretischen Komzepten an. 
+Darüber hinaus implementieren wir ein einfaches Audioverarbeitungsprogramm, welches eine Audiodatei annimmt und eine Filtrierung durch Fourier-Analyse vornimmt. 
+Unter der Audiovearbeitung definieren wir die Komprimierung, Bearbeitung und Übertragung eines bestehenden Audiosignals.
+
+
+\subsection{Grundlagen und Begriffe}
+\textbf{Audioverarbeitung}
+Unter der Audioverarbeitung definieren wir die Komprimierung, Bearbeitung und Übertragung eines bestehenden AUdiosignals.
+
+\textbf{Audiobearbeitung}
+Die Audiobearbeitung dient dazu, das Bearbeitungen an einem Audiosignal vorgenommen werden können.
+Einige Beispiele für solche Bearbeitungen sind Verzerrung, das Filtrieren von Frequenzbereichen (oder auch Frequenzbändern), das Anwenden eines Halleffektes oder auch das Verstellen bei der Audioaufnahme eines Musikstückes.
+
+\textbf{Pulsweitenmodulation}
+
+\textbf{Abtrastrate}
+
+\textbf{Bittiefe}
+
+\textbf{Codec}
+Codec ist die Kurzschreibweise für "Coder Decoder". 
+Bei einem Codec wird das digitalisierte Audiosignal durch einen Kodierer gemäß eines gegebenen Formates kodiert (und bei komprimierten Codecs auch komprimiert). 
+Diese kodierten und komprimierten Audiodaten kann man übertragen oder auch abspeichern und durch die Dekodierung dieses Signals, erhält man je nach Codec das Signal entweder in voller Gänze oder eine Annäherung davon (beispielsweise bei verlustbehafteter Audiokompression).
+
+
+\section{Bestehende Lösungen}
+Gemäß der Definition der Audioverarbeitung gibt es schon einige bestehende Lösungen für diese:
+
+\subsection{Bestehe Lösungen zur Audiokomprimierung}
+Die Audiokomprimierung dient dazu, dass ein digitalisiertes AUdiosignal in dessen Bandbreite zu komprimieren, um diese zur Übertragung, Abspericherung oder Weiterverarbitung schneller und einfacher handzuhaben. 
+Das analoge Audiosignal wird durch Pulsweitenmodulation abgetastet und digitaliert. 
+Dabei haben die Abtastparameter, wie Abtrastrate und Bittiefe eine große Auswirkung auf der Bandbreite des digitalisierten Signals.
+Die Standardwerte für ein Musikstück beispielsweise sind eine Abtraste von 44.100 kHz und eine Bittiefe von 24 Bit. 
+Hierbei bewegt man sich in den Größenbereichen von 20 Megabyte bis 60 Megabyte. 
+Diese Größen sind nicht leicht handhabbar für die Übertragung oder gar beispielsweise für die Abspericherung auf mobilen Endgeräte.
+Umegesetzt wird das ganze durch Codecs. Dabei muss man unterscheiden zwischen verlustfreien und verlustbehafteten Codecs.
+
+Beispiele für verlustfreie Codecs sind \textbf{Free Lossless Audio Codec} (kurz: FLAC), \textbf{Wavpack}, \textbf{Apple Lossless Audio Codec} (kurz: ALAC) ,\textbf{Monkey Audio, True Audio} und weitere. [1]
+
+Beispiele für verlustbehaftete Codecs hingegen sind \textbf{MPEG, Vorbis} oder auch \textbf{Windows Media Audio}.
+
+Diese Lösungen werden je nach Anwendungsfall in heutiger Software, welche Audio benötigen weitesgehend verwendet.
+
+\subsection{Bestehende Lösungen zur Audiobearbeitung}
+
+Meist werden für die Audiobearbeitung digitale Audio Workstations verwendet. 
+Beispiele für solche digitalen Audio Workstations sind in folgender Tabelle aufgeführt:
+
+\section{Theorie}
+
+\subsection{Digitale Signalverarbeitung}
+
+\subsection{Fourier-Analyse}
+
+\subsection{Faltung}
+
+\section{Implementierung der Fourier-Analyse}
+
+\section {Eigenimplementierung eines Audioverarbeitungsprogramms}
+
+\section{Fazit}
+
+\section{Quellen}
+
+[1] https://www.researchgate.net/profile/Teddy-Gunawan/publication/317829002_Investigation_of_Lossless_Audio_Compression_using_IEEE_18572_Advanced_Audio_Coding/links/5a437fcc0f7e9ba868a5847b/Investigation-of-Lossless-Audio-Compression-using-IEEE-18572-Advanced-Audio-Coding.pdf?origin=journalDetail&_tp=eyJwYWdlIjoiam91cm5hbERldGFpbCJ9&__cf_chl_rt_tk=au_e8wiay.b0il5VfKb7.FHV9Kvgkf8SSDz7cRlX7bI-1749802307-1.0.1.1-GD68ZsTC27Jor4BaxrEtT4ifchG27xRHCau3RgFHBrU; Abrufzeitpunkt: 13.06.2025 10:12 Uhr
+
+% Hier beginnt das Literaturverzeichnis
+\clearpage
+\renewcommand\refname{Literaturverzeichnis}
+\bibliographystyle{alpha}
+\bibliography{literatur}
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+
+
+% Hier beginnt der Anhang
+\clearpage
+\appendix
+\part*{Anhang}
+\addcontentsline{toc}{section}{Anhang}
+
+\end{document}

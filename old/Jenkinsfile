@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'blang/latex:ubuntu'
+      image 'rocker/r-rmd'
       args '-u root'
     }
   }
@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build PDF') {
       steps {
-        sh 'lualatex --jobname="audio" 2024-wa-vorlage.tex' 
+        sh 'Rscript render.R'
+        archiveArtifacts artifacts: '*.pdf', fingerprint: true
       }
     }
   }
