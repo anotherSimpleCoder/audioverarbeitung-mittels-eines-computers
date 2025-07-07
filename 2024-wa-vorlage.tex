@@ -82,7 +82,7 @@ Codec ist die Kurzschreibweise für "Coder Decoder".
 Bei einem Codec wird das digitalisierte Audiosignal durch einen Kodierer gemäss eines gegebenen Formates kodiert (und bei komprimierten Codecs auch komprimiert). 
 Diese kodierten und komprimierten Audiodaten kann man übertragen oder auch abspeichern und durch die Dekodierung dieses Signals, erhält man je nach Codec das Signal entweder in voller Gänze oder eine Annäherung davon (beispielsweise bei verlustbehafteter Audiokompression).
 
-
+\label{BL}
 \section{Bestehende Lösungen}
 Gemäß der Definition der Audioverarbeitung gibt es schon einige bestehende Lösungen für diese:
 
@@ -95,7 +95,7 @@ Hierbei bewegt man sich in den Größenbereichen von 20 Megabyte bis 60 Megabyte
 Diese Größen sind nicht leicht handhabbar für die Übertragung oder gar beispielsweise für die Abspericherung auf mobilen Endgeräte.
 Umegesetzt wird das ganze durch Codecs. Dabei muss man unterscheiden zwischen verlustfreien und verlustbehafteten Codecs.
 
-Beispiele für verlustfreie Codecs sind \textbf{Free Lossless Audio Codec} (kurz: FLAC), \textbf{Wavpack}, \textbf{Apple Lossless Audio Codec} (kurz: ALAC) ,\textbf{Monkey Audio, True Audio} und weitere. [1]
+Beispiele für verlustfreie Codecs sind \textbf{Free Lossless Audio Codec} (kurz: FLAC), \textbf{Wavpack}, \textbf{Apple Lossless Audio Codec} (kurz: ALAC) ,\textbf{Monkey Audio, True Audio} und weitere. \cite{gzmk}
 
 Beispiele für verlustbehaftete Codecs hingegen sind \textbf{MPEG, Vorbis} oder auch \textbf{Windows Media Audio}.
 
@@ -104,11 +104,25 @@ Diese Lösungen werden je nach Anwendungsfall in heutiger Software, welche Audio
 \subsection{Bestehende Lösungen zur Audiobearbeitung}
 
 Meist werden für die Audiobearbeitung digitale Audio Workstations verwendet. 
-Beispiele für solche digitalen Audio Workstations sind in folgender Tabelle aufgeführt:
+Einige Beispiele für solche digitalen Audio Workstations sind:
+
+\begin{itemize}
+    \item Ableton Live
+    \item FL Studio
+    \item Bitwig Studio
+    \item Apple Logic
+\end{itemize}
 
 \section{Theorie}
 
+Damit die in \ref{BL} angegebenen Lösungen umgesetzt werden können, müssen entsprechende theoretische Grundlagen, dem Rechner vorgelegt werden.
+Im Falle der Audioverarbeitung basieren diese theoretischen Grundlagen auf der digitalen Signalverarbeitung.
+
 \subsection{Digitale Signalverarbeitung}
+
+Im Vergleich zu anderen Feldern in der Informatik, unterscheidet sich die digitale Signalverarbeitung in der Art der Daten, welche behandelt werden undzwar Signale. 
+Diese Signale kommen meist von sensorischen Daten auf der echten Welt: Seien es seismische Vibrationen, Bilder, Schwingungen durch Töne oder Geräusche etc. Die digitale Signalverarbeitung beinhaltet dabei 
+die Mathematik, die Algorithmen und die Techniken, um digitalisierte Signale zu manipulieren. \cite{sws1}
 
 \subsection{Fourier-Analyse}
 
@@ -119,10 +133,6 @@ Beispiele für solche digitalen Audio Workstations sind in folgender Tabelle auf
 \section {Eigenimplementierung eines Audioverarbeitungsprogramms}
 
 \section{Fazit}
-
-\section{Quellen}
-
-[1] \url{https://www.researchgate.net/profile/Teddy-Gunawan/publication/317829002_Investigation_of_Lossless_Audio_Compression_using_IEEE_18572_Advanced_Audio_Coding/links/5a437fcc0f7e9ba868a5847b/Investigation-of-Lossless-Audio-Compression-using-IEEE-18572-Advanced-Audio-Coding.pdf?origin=journalDetail&_tp=eyJwYWdlIjoiam91cm5hbERldGFpbCJ9&__cf_chl_rt_tk=au_e8wiay.b0il5VfKb7.FHV9Kvgkf8SSDz7cRlX7bI-1749802307-1.0.1.1-GD68ZsTC27Jor4BaxrEtT4ifchG27xRHCau3RgFHBrU; Abrufzeitpunkt: 13.06.2025 10:12 Uhr}
 
 % Hier beginnt das Literaturverzeichnis
 \clearpage
