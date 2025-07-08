@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex 2024-wa-vorlage"] 1751979380.34172 "2024-wa-vorlage.aux" "2024-wa-vorlage.bbl" "2024-wa-vorlage" 1751979692.30588 0
-  "./literatur.bib" 1751978539.10294 2755 0c5040e2ea83809e5304e90b4f1a7896 ""
+["bibtex 2024-wa-vorlage"] 1751980615.95296 "2024-wa-vorlage.aux" "2024-wa-vorlage.bbl" "2024-wa-vorlage" 1751980617.20641 0
+  "./literatur.bib" 1751980609.20804 891 6f5824350ad53279294e575ea69b0090 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/alpha.bst" 1737590400 23907 a5f93555796fb564b924339521f10a7c ""
-  "2024-wa-vorlage.aux" 1751979692.01511 2100 8be0a8dde2d2bbe475948c568d70dcf6 "pdflatex"
-  "titleseite.aux" 1751979691.97011 509 c60d9726e3347677af809a8864cb967a "pdflatex"
+  "2024-wa-vorlage.aux" 1751980616.85722 2100 8be0a8dde2d2bbe475948c568d70dcf6 "pdflatex"
+  "titleseite.aux" 1751980616.80922 509 c60d9726e3347677af809a8864cb967a "pdflatex"
   (generated)
   "2024-wa-vorlage.bbl"
   "2024-wa-vorlage.blg"
   (rewritten before read)
-["pdflatex"] 1751979691.25765 "/home/amsakan/dev/audioverarbeitung-mittels-eines-computers/2024-wa-vorlage.tex" "2024-wa-vorlage.pdf" "2024-wa-vorlage" 1751979692.3064 0
-  "/home/amsakan/dev/audioverarbeitung-mittels-eines-computers/2024-wa-vorlage.tex" 1751979660.98026 12627 5782390720379d1f323647e6ebb0dae9 ""
+["pdflatex"] 1751980616.05439 "/home/amsakan/dev/audioverarbeitung-mittels-eines-computers/2024-wa-vorlage.tex" "2024-wa-vorlage.pdf" "2024-wa-vorlage" 1751980617.20697 0
+  "/home/amsakan/dev/audioverarbeitung-mittels-eines-computers/2024-wa-vorlage.tex" 1751980614.54343 12766 572b000e45f3888be37eca64ef078e77 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -121,12 +121,12 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1737590400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1751901148.73823 4547823 614eba97e0451aad345770236b030e55 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1751900807 7758694 01158b9683d0109c6ce03b8cc04417f0 ""
-  "2024-wa-vorlage.aux" 1751979692.01511 2100 8be0a8dde2d2bbe475948c568d70dcf6 "pdflatex"
-  "2024-wa-vorlage.bbl" 1751979380.42771 739 2760ac6e117b4a3b955bcd6f82cf6a49 "bibtex 2024-wa-vorlage"
-  "2024-wa-vorlage.tex" 1751979660.98026 12627 5782390720379d1f323647e6ebb0dae9 ""
-  "2024-wa-vorlage.toc" 1751979692.01711 1062 8d4ec87e8a6d7474d90e5e2d1ab5e499 "pdflatex"
+  "2024-wa-vorlage.aux" 1751980616.85722 2100 8be0a8dde2d2bbe475948c568d70dcf6 "pdflatex"
+  "2024-wa-vorlage.bbl" 1751980616.04523 739 2760ac6e117b4a3b955bcd6f82cf6a49 "bibtex 2024-wa-vorlage"
+  "2024-wa-vorlage.tex" 1751980614.54343 12766 572b000e45f3888be37eca64ef078e77 ""
+  "2024-wa-vorlage.toc" 1751980616.85827 1062 8d4ec87e8a6d7474d90e5e2d1ab5e499 "pdflatex"
   "graphics/htw_logo.pdf" 1751899523.9419 38674 37be0a1187ef08bd560d140172e8408b ""
-  "titleseite.aux" 1751979691.97011 509 c60d9726e3347677af809a8864cb967a "pdflatex"
+  "titleseite.aux" 1751980616.80922 509 c60d9726e3347677af809a8864cb967a "pdflatex"
   "titleseite.tex" 1751979690.97811 504 28b17522445ddd48f1669fc7e1e197c5 ""
   (generated)
   "2024-wa-vorlage.aux"
