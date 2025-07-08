@@ -1,12 +1,17 @@
-\begin{thebibliography}{TSG17}
+\begin{thebibliography}{TZMK17}
+
+\bibitem[GFV21]{dolequez}
+Jovanovic~Dolecek Gordana and Alfonso Fernandez-Vazquez.
+\newblock Understanding discrete time convolution: A demo program approach.
+\newblock {\em Computación y Sistemas}, 25(2):361--367, 2021.
 
 \bibitem[Ste97]{sws1}
 Smith Steven, W.
 \newblock {\em The Scientist and Engineer's Guide to Digital Signal Processing}.
 \newblock California Technical Pub, 1997.
 
-\bibitem[TSG17]{gzmk}
-Fathiah Abdul Muin Mira~Kartiwi Teddy Surya~Gunawan, M. Khalif Mat~Zain.
+\bibitem[TZMK17]{gzmk}
+Surya~Gunawan Teddy, M.~Khalif~Mat Zain, Fathiah~Abdul Muin, and Mira Kartiwi.
 \newblock Investigation of lossless audio compre4ssion using ieee 1857.2 advanced audio coding.
 \newblock {\em Indonesian Journal of Electrical Engineering and Computer Science}, 6(2):422, 2017.
 

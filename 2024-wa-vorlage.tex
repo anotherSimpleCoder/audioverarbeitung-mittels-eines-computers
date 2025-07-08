@@ -4,10 +4,24 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage[ngerman]{babel}
+\usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage[a4paper,left=25mm,right=35mm,top=25mm,bottom=30mm]{geometry}
 \usepackage{parskip}
-\usepackage{url}	
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  commentstyle=\color{green!50!black},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  breaklines=true
+}
 
 \begin{document}
 
@@ -20,6 +34,8 @@
 % Hier ist der Abstract
 \section*{Abstract}
 In dieser Arbeit befassen wir uns mit der Audioverarbeitung von Computern.
+Dabei beleuchten wir zunächst einige theoretische Grundlagen, welche auf der digitalen Signalverarbeitung basieren und setzen diese durch Implementierung um, sodass 
+ein tieferes Verständnis bezüglich der Audioverarbeitung auf Computern aufgebaut wird.
 
 \newpage
 \section*{Selbstständigkeitserklärung}
@@ -124,15 +140,100 @@ Im Vergleich zu anderen Feldern in der Informatik, unterscheidet sich die digita
 Diese Signale kommen meist von sensorischen Daten auf der echten Welt: Seien es seismische Vibrationen, Bilder, Schwingungen durch Töne oder Geräusche etc. Die digitale Signalverarbeitung beinhaltet dabei 
 die Mathematik, die Algorithmen und die Techniken, um digitalisierte Signale zu manipulieren. \cite{sws1}
 
-\subsection{Fourier-Analyse}
+In dieser Arbeit betrachten wir zwei Algorithmen aus der digitalen Signalverarbeitung. Zum einen die diskrete Fourier-Transformation und zum anderen die Faltung.
+
+\subsection{Die diskrete Fourier-Transformation}
+
+Mir der diskreten Fourier Transformation ist es möglich das Frequenzspektrum eines digitalisierten Signals zu berechnen. Dadurch erhält man die Informationen wie die Schwingungsfrequenz, Phase und Amplitude der einzelenen Teilschwingungen
+eines Gesamtsignals. \cite{sws1}
+
+Dadurch erhält man neben der Zeit-Amplituden Repräsentation nun eine Amplituden-Frequnz Repräsentation des Signals, wodurch es möglich ist Bearbeitungen wie die Filtrierung von Frequenzbereichen eines Audiosignals vorzunehmen.
+Man spricht hierbei auch von einer Konvertierung von der Zeitdomöne zur Frequenzdomäne.
+
+Bei der diskreten Fourier Transformation wird dabei wie folgt vorgegangen:
+
+Gegeben sei ein kontinuierliches Signal dargestellt durch eine komplexe Funktion $f(t)$, wobei $t$ die Zeit beschreibt. Dabei tasten wir dieses Signal ab und erhalten damit eine endliche Anzahl an $N \in \mathbb{N}$ Messpunkten in einem Abstand $T \in \mathbb{N}$.
+Diese notieren wir mit $f[0], f[1], \dots, f[N-1]$. 
+
+Die Fourier-Transformation des ursprünglichen Signals $f(t)$ wäre dabei 
+
+$$F(j\omega) = \int_{-\infty}^{\infty} f(t) e^{-j \omega t} dt$$
+
+Dadurch, dass wir aber mit einem diskreten Signal arbeiten, welches aus einzelenen Messpunkten bestehen, verändert sich unser diskretes Integral wie folgt:
+    
+$$F(j\omega) = \int_{0}^{(N-1)T} f(t) e^{-j \omega t} dt$$
+$$= f[0]e^{j0} + f[1]e^{-j \omega T} + \dots + f[N-1]e^{-j \omega (N-1) T}$$ 
+
+oder auch 
+
+$$F(j \omega) = \sum_{k=0}^{N-1} f[k]e^{-j \omega k T}$$
+
+$F(j \omega)$ liefert uns dabei für eine Frequenz $\omega$ dessen Amplitudenanteil in dem Signal und $j$ ist die imaginäre Zahl in $\mathbb{C}$
+
+$$\omega \in \{ 0, \frac{2 \pi}{NT}, \frac{2 \pi}{NT} \cdot 2, \dots, \frac{2\pi}{NT} \cdot (N-1) \}$$
+
+Aus all dem ergibt sich die folgende Formel für die diskrete Fourier-Transformation:
+
+$$F[n] = \sum_{k=0}^{N-1} f[k]e^{-j \frac{2 \pi}{N} nk} \ (n = 0: N-1)$$
 
 \subsection{Faltung}
 
-\section{Implementierung der Fourier-Analyse}
+Bei der Faltung handelt es sich neben der diskreten Fourier-Transformation auch um eine Operation aus der digitalen Signalverarbeitung. Dabei werden zwei Signale 
+$f$ und $g$ zusammengeführt. Mathematisch lässt sich diese Zusammenführung wie folgt beschreiben:
+
+Sei $h$ die Faltungsfunktion \cite{dolequez}:
+
+$$g(n) = \sum_{k} f(k) h(n-k) = \sum_{k} h(k) x (n-k)$$
+
+Die Faltung findet sehr oft Verwendung in der Audiobearbeitung, um Halleffekte anhand eines gegeben Raumhallsignales zu realisieren. Diese Effekte nennt man auch
+entsprechend Faltungshall.
+
+\section{Implementierung der diskreten Fourier-Transformation}
+
+Dadurch, dass wir nun einige theoretische Grundlagen der Audioverarbeitung festgelegt haben, können wir diese nun implementieren. Dabei setzen wir den Fokus auf der diskreten Fourier-Transformation, da 
+diese in der Audioverarbeitung am relevantesten ist und in vielerlei Audioverarbeitungssoftware Verwendung findet.
+
+Der Pseduocode zur Implementierung der diskreten Fourier Transformation sieht wie folgt aus:
+
+\begin{lstlisting}
+    def discrete_fourier_transform(signal, samples):
+        result = list()
+
+        for k in range(0, N):
+            sum = 0
+            for n in range(0, N):
+                angle = (-2 * PI * k * n) / N
+            result.push(sum)
+\end{lstlisting}
 
 \section {Eigenimplementierung eines Audioverarbeitungsprogramms}
 
+Nachdem wir mit der Implementierung der diskreten Fourier Transformation nun eine der wichtigsten Operationen der Audioverarbeitung implementiert haben, versuchen wir uns nun an der Implementierung eines vollwertigen Audioprogrammes.
+In der Audiosoftwareindustrie ist es dabei üblich, dass auf Programmiersprachen wie C, C++ oder auch Rust gesetzt werden. In dieser Arbeit findet die Implementierung in C++ statt, da diese am weitesten verbreitet ist zur Entwicklung von
+Audioverarbeitungsapplikationen mit der Begrüdung, dass hier auch durch direkter Ausführung auf der Hardware, die nötigen Resourcen zur Audioverarbeitung verwendet werde mit möglichst geringer Latenz.
+
+Das Audioverarbeitungsprogramm was wir implementieren werden läuft auf der Kommandozeile und nimmt eine Audiodatei im RIFF-WAVE Format an.
+Über einen Kommandozeilenparameter wird die Frequenz angegeben, ab welcher eine Tiefenpassfiltrierung stattfinden soll, welche wir durch diskrete Fourier Transformation realisieren werden.
+
+Das filtriete Signal soll dann als neue RIFF-WAVE Datei mit der Eingangsabtastrate und Bittiefe ausgegeben werden.
+
+Die Syntax unseres Kommandozeilenprograms ist also wie folgt:
+
+\begin{lstlisting}
+    simpleFilter -in <Eingabedatei> -freq <Filtrierungsfrequenz> -out <Ausgabedatei>
+\end{lstlisting}
+
+Dabei greifen wir auf die Bibliothek \textbf{AudioFile} von Adam Stark zurück, um das Dateihandling zu realisieren. 
+
+Die Implementierung ist verfügbar unter dem GitHub Repository:
+
+https://github.com/anotherSimpleCoder/simpleFilter
+
 \section{Fazit}
+
+Auch wenn die Implementierung der einzelnen Audioverarbeitungsalgorithmen sich als sehr aufwändig feststellt, bilden diese die Grundlage der heutigen digitalen Audioverarbeitung, welche
+Internettelefonate, Musikproduktion und auch neue Arten des Umgangs mit Geräuschen und Klängen realisiert. Jedoch ist es heutzutage so, dass eine komplette Eigenimplementierung von diesen Operationen nicht mehr benötigt wird, da
+es für diese Bibliotheken wie \textbf{FFTW}, \textbf{KFR} oder auch \textbf{GNURadio} gibt.
 
 % Hier beginnt das Literaturverzeichnis
 \clearpage
@@ -144,8 +245,6 @@ die Mathematik, die Algorithmen und die Techniken, um digitalisierte Signale zu 
 
 % Hier beginnt der Anhang
 \clearpage
-\appendix
-\part*{Anhang}
-\addcontentsline{toc}{section}{Anhang}
+
 
 \end{document}

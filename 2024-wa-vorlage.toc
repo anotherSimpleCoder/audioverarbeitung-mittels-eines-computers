@@ -6,11 +6,10 @@
 \contentsline {subsection}{\numberline {2.2}Bestehende Lösungen zur Audiobearbeitung}{2}{}%
 \contentsline {section}{\numberline {3}Theorie}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Digitale Signalverarbeitung}{2}{}%
-\contentsline {subsection}{\numberline {3.2}Fourier-Analyse}{3}{}%
-\contentsline {subsection}{\numberline {3.3}Faltung}{3}{}%
-\contentsline {section}{\numberline {4}Implementierung der Fourier-Analyse}{3}{}%
-\contentsline {section}{\numberline {5}Eigenimplementierung eines Audioverarbeitungsprogramms}{3}{}%
-\contentsline {section}{\numberline {6}Fazit}{3}{}%
-\contentsline {section}{Literaturverzeichnis}{4}{}%
-\contentsline {section}{Anhang}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Die diskrete Fourier-Transformation}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Faltung}{4}{}%
+\contentsline {section}{\numberline {4}Implementierung der diskreten Fourier-Transformation}{4}{}%
+\contentsline {section}{\numberline {5}Eigenimplementierung eines Audioverarbeitungsprogramms}{5}{}%
+\contentsline {section}{\numberline {6}Fazit}{5}{}%
+\contentsline {section}{Literaturverzeichnis}{6}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
