@@ -97,7 +97,7 @@ das Filtrieren von Frequenzbereichen (oder auch Frequenzbändern), das Anwenden
 eines Halleffektes oder auch das Verstellen bei der Audioaufnahme eines Musikstückes.
 
 \textbf{Puls-Code-Modulation}
-"Pulse code modultion (PCM) embodies the basic concepts of transmitting a sequence of symbols, i.e., pulses to represent information." \cite{waggener1995pulse} (Seite 7, Abschnitt 1)
+"Pulse code modultion (PCM) embodies the basic concepts of transmitting a sequence of symbols, i.e., pulses to represent information." \cite{waggener1995pulse, Patel2019PCM} (bei Wag95: Seite 7, Abschnitt 1)
 
 \textbf{Abtrastrate}
 Die Abtastrate oder auch Abtastfrequenz bezeichnet die Anzahl an Abtastwerten
@@ -184,7 +184,7 @@ In dieser Arbeit betrachten wir zwei Algorithmen aus der digitalen Signalverarbe
 
 "The Discrete Fourier Transform (DFT) is the equivalent of the continuous Fourier
 Transform for signals known only at instants separated by sample times (i.e.
-a finite sequence of data)"\cite{roberts_dft_slides} (Seite 141 Abschnitt 1)
+a finite sequence of data)"\cite{roberts_dft_slides, Anand2010FFT} (bei Rob03: Seite 141 Abschnitt 1)
 
 Dadurch erhält man neben der Zeit-Amplituden Repräsentation nun eine Amplituden-Frequnz Repräsentation des Signals, wodurch es möglich ist Bearbeitungen wie die Filtrierung von Frequenzbereichen eines Audiosignals vorzunehmen.
 Man spricht hierbei auch von einer Konvertierung von der Zeitdomöne zur Frequenzdomäne.
@@ -330,6 +330,58 @@ Da mein Thema einige der angeforderten Aspekte incht vollständig enthält, prä
     \end{tabular}
 }
 
+\newcommand{\adressTableThomasMueller}{
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Adresse}} \\
+    \hline
+    Straße & Hausnummer & Postleitzahl & Wohnort\\
+    \hline
+    Ballstraße & 4 & 50667 & Köln \\
+    \hline
+    \end{tabular}
+}
+
+\newcommand{\adressTableDietmarSchmidt}{
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Adresse}} \\
+    \hline
+    Straße & Hausnummer & Postleitzahl & Wohnort \\
+    \hline
+    Musterstraße & 3 & 66111 & Saarbrücken \\
+    \hline
+    \end{tabular}
+}
+
+\newcommand{\adressTableUdoJuergens}{
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Adresse}} \\
+    \hline
+    Straße & Hausnummer & Postleitzahl & Wohnort \\
+    \hline
+    Mausstraße & 21 & 45781 & Eulerstadt \\
+    \hline
+    \end{tabular}
+}
+
+\newcommand{\peopleTable}{
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Personen}} \\
+    \hline
+    Name & Vorname & Addresse \\
+    \hline
+    Müller & Thomas & \adressTableThomasMueller \\
+    \hline
+    Schmidt & Dietmar & \adressTableDietmarSchmidt \\
+    \hline
+    Jürgens & Udo & \adressTableUdoJuergens \\
+    \hline
+    \end{tabular}
+}
+
 \subsection{Komplexe Tabellen}
 \begin{table}[H]
 \centering
@@ -341,6 +393,16 @@ Da mein Thema einige der angeforderten Aspekte incht vollständig enthält, prä
     \hline
     \end{tabular}
 }
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Personendaten}
+    \begin{tabular}{|c|}
+    \hline
+    \peopleTable \\
+    \hline
+    \end{tabular}
 \end{table}
 
 \subsection{Komplexer Plot}
@@ -408,8 +470,6 @@ gnuplot> set xlabel "Frequenz"
 gnuplot> set ylabel "Amplitude"
 gnuplot> plot "fft_data,dat" using 1:2 with lines title "Beethoven Symphony No.9 (Frequenzdarstellung)"
 \end{lstlisting}
-
-\newpage
 
 \subsection{Gnuplotskript zur Erzeugung von Abbildung \ref{fig:comlex-plot}}
 \begin{lstlisting}
