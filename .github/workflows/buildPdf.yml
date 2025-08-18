@@ -1,0 +1,62 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write          # only needed if you enable the Pages job below
+  id-token: write       # only needed if you enable the Pages job below
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive   # pulls external LaTeX sources if you use submodules
+          lfs: true               # if any figures are stored via Git LFS
+          fetch-depth: 0
+
+      # Popular action that installs a minimal TeX Live, caches it automatically,
+      # and runs latexmk for you.
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          # main entry point(s). You can pass multiple, comma-separated if needed.
+          root_file: main.tex
+
+          # Choose your engine; set exactly one of these to true.
+          # latexmk will take care of running BibTeX/Biber as needed.
+          # latexmk_use_pdflatex: true
+          # latexmk_use_xelatex: true
+          latexmk_use_lualatex: true
+
+          # Enable Biber if you use biblatex+biber (otherwise latexmk will run bibtex).
+          latexmk_use_biber: true
+
+          # Typical latexmk args; shell-escape is handy for minted/svg/standalone, etc.
+          args: -pdf -file-line-error -interaction=nonstopmode -shell-escape
+
+          # Install system tools needed for graphics & conversions (SVG, PDF utils, etc.)
+          extra_system_packages: inkscape ghostscript poppler-utils
+
+          # If you need specific LaTeX packages beyond the minimal set, install via tlmgr:
+          pre_compile: |
+            tlmgr update --self --all
+            tlmgr install biblatex csquotes siunitx subfiles cleveref filehook etoolbox \
+                          caption microtype pgf tikz standalone svg \
+                          fontspec unicode-math  # (safe if not using Lua/XeLaTeX too)
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: |
+            ./main.pdf
+          if-no-files-found: error
