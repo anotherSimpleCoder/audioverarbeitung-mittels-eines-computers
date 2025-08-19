@@ -1,0 +1,3 @@
+[submodule "simpleFilter"]
+	path = simpleFilter
+	url = git@github.com:anotherSimpleCoder/simpleFilter.git
